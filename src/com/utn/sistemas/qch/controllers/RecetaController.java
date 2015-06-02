@@ -2,6 +2,7 @@ package com.utn.sistemas.qch.controllers;
 
 import com.utn.sistemas.qch.entities.Ingrediente;
 import com.utn.sistemas.qch.entities.Receta;
+import com.utn.sistemas.qch.entities.Usuario;
 
 public class RecetaController {
 
@@ -13,7 +14,10 @@ public class RecetaController {
         receta.agregarIngrediente(ingrediente);
     }
 
-    public void guardarReceta(Receta receta) {
+    public void guardarReceta(Usuario usuario, Receta receta) {
         receta.guardar();
+
+        usuario.setReceta(receta);
+        usuario.guardar();
     }
 }
