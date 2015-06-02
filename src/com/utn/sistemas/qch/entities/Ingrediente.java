@@ -8,8 +8,8 @@ public class Ingrediente {
 
     private String nombre;
 
-    public static Ingrediente buscarIngrediente(Ingrediente ingrediente) {
-        return ingredienteDAO.obtenerIngredientePorNombre(ingrediente.getNombre());
+    public static Ingrediente buscarIngrediente(Integer ingredienteId) {
+        return ingredienteDAO.obtenerIngredientePorNombre(ingredienteId);
     }
 
     public String getNombre() {

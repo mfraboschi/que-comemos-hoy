@@ -6,4 +6,6 @@ public interface RecetaDAO {
 
     public void guardarReceta(Receta receta);
 
+    public Receta obtenerReceta(Integer recetaId);
+
 }

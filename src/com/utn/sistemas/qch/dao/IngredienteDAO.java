@@ -4,5 +4,5 @@ import com.utn.sistemas.qch.entities.Ingrediente;
 
 public interface IngredienteDAO {
 
-    public Ingrediente obtenerIngredientePorNombre(String nombre);
+    public Ingrediente obtenerIngredientePorNombre(Integer ingredienteId);
 }
