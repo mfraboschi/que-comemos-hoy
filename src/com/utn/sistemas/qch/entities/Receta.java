@@ -1,6 +1,7 @@
 package com.utn.sistemas.qch.entities;
 
 import com.utn.sistemas.qch.dao.RecetaDAO;
+import com.utn.sistemas.qch.dto.Calificacion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +15,10 @@ public class Receta {
     private static RecetaDAO recetaDAO;
     private List<Ingrediente> ingredientes;
     private String nombreReceta;
+    private Calificacion calificacion;
 
     public void agregarIngrediente(Ingrediente ingrediente) {
-        if (ingredientes == null || ingredientes.isEmpty()) {
+        if(ingredientes == null || ingredientes.isEmpty()) {
             ingredientes = new ArrayList<Ingrediente>();
         }
 
@@ -37,5 +39,13 @@ public class Receta {
 
     public void setNombreReceta(String nombreReceta) {
         this.nombreReceta = nombreReceta;
+    }
+
+    public Calificacion getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(Calificacion calificacion) {
+        this.calificacion = calificacion;
     }
 }

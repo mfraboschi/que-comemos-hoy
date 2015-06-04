@@ -4,6 +4,4 @@ import com.utn.sistemas.qch.entities.Usuario;
 
 public interface UsuarioDAO {
     public boolean guardarUsuario(Usuario usuario);
-
-    public Usuario obtenerUsuario(Integer usuarioId);
 }

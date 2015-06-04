@@ -1,6 +1,6 @@
 package com.utn.sistemas.qch.controllers;
 
-import com.utn.sistemas.qch.entities.Calificacion;
+import com.utn.sistemas.qch.dto.Calificacion;
 import com.utn.sistemas.qch.entities.Ingrediente;
 import com.utn.sistemas.qch.entities.Receta;
 import com.utn.sistemas.qch.entities.Usuario;
@@ -28,9 +28,12 @@ public class RecetaController {
     }
 
     public void calificarReceta(Integer recetaId, Integer calificacionNumero) {
-        Receta receta = Receta.obtenerReceta(recetaId);
-        Calificacion calificacion = new Calificacion(calificacionNumero, receta);
+        Calificacion calificacion = new Calificacion(calificacionNumero);
 
-        calificacion.guardar();
+        Receta receta = Receta.obtenerReceta(recetaId);
+
+        receta.setCalificacion(calificacion);
+
+        receta.guardar();
     }
 }
