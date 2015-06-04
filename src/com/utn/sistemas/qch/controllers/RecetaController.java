@@ -27,9 +27,10 @@ public class RecetaController {
         usuario.guardar();
     }
 
-    public void calificarReceta(Integer recetaId, Integer calificacionNumero) {
+    public void calificarReceta(Integer recetaId, Integer usuarioId, Integer calificacionNumero) {
+        Usuario usuario = Usuario.obtenerUsuario(usuarioId);
         Receta receta = Receta.obtenerReceta(recetaId);
-        Calificacion calificacion = new Calificacion(calificacionNumero, receta);
+        Calificacion calificacion = new Calificacion(calificacionNumero, receta, usuario);
 
         calificacion.guardar();
     }

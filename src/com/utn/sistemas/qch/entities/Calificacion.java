@@ -7,9 +7,11 @@ public class Calificacion {
 
     private Integer calificacionNumero;
     private Receta receta;
+    private Usuario usuario;
 
-    public Calificacion(Integer calificacionNumero, Receta receta) {
+    public Calificacion(Integer calificacionNumero, Receta receta, Usuario usuario) {
         this.calificacionNumero = calificacionNumero;
+        this.usuario = usuario;
         this.receta = receta;
     }
 
@@ -30,5 +32,13 @@ public class Calificacion {
 
     public void setReceta(Receta receta) {
         this.receta = receta;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
