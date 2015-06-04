@@ -4,9 +4,13 @@ import com.utn.sistemas.qch.dao.UsuarioDAO;
 
 public class Usuario {
 
-    private UsuarioDAO usuarioDAO;
+    private static UsuarioDAO usuarioDAO;
+
     private Receta receta;
 
+    public static Usuario obtenerUsuario(Integer usuarioId) {
+        return usuarioDAO.obtenerUsuario(usuarioId);
+    }
     public Receta getReceta() {
         return receta;
     }
