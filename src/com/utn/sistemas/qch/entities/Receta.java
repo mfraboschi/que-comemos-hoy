@@ -1,6 +1,7 @@
 package com.utn.sistemas.qch.entities;
 
 import com.utn.sistemas.qch.dao.RecetaDAO;
+import com.utn.sistemas.qch.enums.Periodo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +34,18 @@ public class Receta {
 
     public static Receta obtenerReceta(Integer recetaId) {
         return recetaDAO.obtenerReceta(recetaId);
+    }
+
+    public static List<Receta> obtenerRecetasDeUsuarios(List<Usuario> usuarios) {
+        return recetaDAO.obtenerRecetasDeUsuarios(usuarios);
+    }
+
+    public static List<Receta> obtenerRecetasPorDificultad(Periodo periodo, String dificultad) {
+        return recetaDAO.obtenerRecetasPorDificultad(periodo, dificultad);
+    }
+
+    public static List<Receta> obtenerRecetasMasConsultadas(Periodo periodo) {
+        return recetaDAO.obtenerRecetasMasConsultadas(periodo);
     }
 
     public String getNombreReceta() {

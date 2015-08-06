@@ -5,6 +5,7 @@ import com.utn.sistemas.qch.enums.Complexion;
 import com.utn.sistemas.qch.enums.Sexo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Usuario {
 
@@ -34,5 +35,9 @@ public class Usuario {
 
     public void guardar() {
         usuarioDAO.guardarUsuario(this);
+    }
+
+    public static List<Usuario> obtenerUsuariosPorSexo(Sexo sexo) {
+        return usuarioDAO.obtenerUsuariosPorSexo(sexo);
     }
 }
