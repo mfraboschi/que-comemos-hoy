@@ -8,10 +8,12 @@ import java.util.Set;
 public class Grupo {
     private static GrupoDAO grupoDAO;
 
-    private Set<Usuario> listaUsuarios;
-    private Usuario creador;
-    private String nombre;
-
+    public String nombre;
+    public String intereses;
+    public String preferencias;
+    public Set<Usuario> listaUsuarios;
+    public Usuario creador;
+    
     public Grupo(String nombreGrupo, Usuario creador) {
         this.creador = creador;
         this.nombre = nombreGrupo;

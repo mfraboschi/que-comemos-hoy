@@ -7,37 +7,41 @@ import com.utn.sistemas.qch.enums.Sexo;
 import java.util.Date;
 import java.util.List;
 
-public class Usuario {
+public class Usuario
+{
 
-    private static UsuarioDAO usuarioDAO;
+	private static UsuarioDAO usuarioDAO;
 
-    private Receta receta;
-    private Integer id;
-    private Date fechaNacimiento;
-    private Integer peso;
-    private Integer alturaEnCentimetros;
-    private Enum<Complexion> complexion;
-    private Enum<Sexo> sexo;
-    private String dieta;
-    private String rutina;
+	private String id;
+	private String password;
+	public String nombre;
+	public char sexo;
+	public Date fechaNacimiento;
+	public Integer alturaEnCentimetros;
+	public Integer peso;
+	public String dieta;
+	private String rutina;
+	public Enum<Complexion> complexion;
+	public List<Receta> recetas;
+
+	public static Usuario obtenerUsuario(Integer usuarioId)
+	{
+		return usuarioDAO.obtenerUsuario(usuarioId);
+	}
 
 
-    public static Usuario obtenerUsuario(Integer usuarioId) {
-        return usuarioDAO.obtenerUsuario(usuarioId);
-    }
-    public Receta getReceta() {
-        return receta;
-    }
+	public void setReceta(Receta receta)
+	{
+		this.receta=receta;
+	}
 
-    public void setReceta(Receta receta) {
-        this.receta = receta;
-    }
+	public void guardar()
+	{
+		usuarioDAO.guardarUsuario(this);
+	}
 
-    public void guardar() {
-        usuarioDAO.guardarUsuario(this);
-    }
-
-    public static List<Usuario> obtenerUsuariosPorSexo(Sexo sexo) {
-        return usuarioDAO.obtenerUsuariosPorSexo(sexo);
-    }
+	public static List<Usuario> obtenerUsuariosPorSexo(Sexo sexo)
+	{
+		return usuarioDAO.obtenerUsuariosPorSexo(sexo);
+	}
 }

@@ -6,98 +6,126 @@ import com.utn.sistemas.qch.enums.Periodo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Receta {
+public class Receta
+{
 
-    public Receta(String nombreReceta) {
-        this.nombreReceta = nombreReceta;
-    }
+	public Receta(String nombreReceta)
+	{
+		this.nombreReceta=nombreReceta;
+	}
 
-    private static RecetaDAO recetaDAO;
-    private List<Ingrediente> ingredientes;
-    private String nombreReceta;
-    private Integer dificultad;
-    private String temporada;
-    private Integer calorias;
-    private List<String> contraIndicaciones;
+	private static RecetaDAO recetaDAO;
 
-    public void agregarIngrediente(Ingrediente ingrediente) {
-        if (ingredientes == null || ingredientes.isEmpty()) {
-            ingredientes = new ArrayList<Ingrediente>();
-        }
+	public String nombreReceta;
+	public Usuario duenio;
+	public List<Ingrediente> ingredientes;
+	public List<Condimento> condimentos;
+	public Integer calificacion;
+	public List<String> categoria;
+	public Integer dificultad;
+	public String temporada;
+	public Integer calorias;
+	public List<String> contraIndicaciones;
+	public List<String> procedimientos;
 
-        ingredientes.add(ingrediente);
-    }
+	public void agregarIngrediente(Ingrediente ingrediente)
+	{
+		if(ingredientes==null||ingredientes.isEmpty())
+		{
+			ingredientes=new ArrayList<Ingrediente>();
+		}
 
-    public void guardar() {
-        recetaDAO.guardarReceta(this);
-    }
+		ingredientes.add(ingrediente);
+	}
 
-    public static Receta obtenerReceta(Integer recetaId) {
-        return recetaDAO.obtenerReceta(recetaId);
-    }
+	public void guardar()
+	{
+		recetaDAO.guardarReceta(this);
+	}
 
-    public static List<Receta> obtenerRecetasDeUsuarios(List<Usuario> usuarios) {
-        return recetaDAO.obtenerRecetasDeUsuarios(usuarios);
-    }
+	public static Receta obtenerReceta(Integer recetaId)
+	{
+		return recetaDAO.obtenerReceta(recetaId);
+	}
 
-    public static List<Receta> obtenerRecetasPorDificultad(Periodo periodo, String dificultad) {
-        return recetaDAO.obtenerRecetasPorDificultad(periodo, dificultad);
-    }
+	public static List<Receta> obtenerRecetasDeUsuarios(List<Usuario> usuarios)
+	{
+		return recetaDAO.obtenerRecetasDeUsuarios(usuarios);
+	}
 
-    public static List<Receta> obtenerRecetasMasConsultadas(Periodo periodo) {
-        return recetaDAO.obtenerRecetasMasConsultadas(periodo);
-    }
+	public static List<Receta> obtenerRecetasPorDificultad(Periodo periodo, String dificultad)
+	{
+		return recetaDAO.obtenerRecetasPorDificultad(periodo,dificultad);
+	}
 
-    public String getNombreReceta() {
-        return nombreReceta;
-    }
+	public static List<Receta> obtenerRecetasMasConsultadas(Periodo periodo)
+	{
+		return recetaDAO.obtenerRecetasMasConsultadas(periodo);
+	}
 
-    public void setNombreReceta(String nombreReceta) {
-        this.nombreReceta = nombreReceta;
-    }
+	public String getNombreReceta()
+	{
+		return nombreReceta;
+	}
 
-    public Integer getDificultad() {
-        return dificultad;
-    }
+	public void setNombreReceta(String nombreReceta)
+	{
+		this.nombreReceta=nombreReceta;
+	}
 
-    public void setDificultad(Integer dificultad) {
-        this.dificultad = dificultad;
-    }
+	public Integer getDificultad()
+	{
+		return dificultad;
+	}
 
-    public String getTemporada() {
-        return temporada;
-    }
+	public void setDificultad(Integer dificultad)
+	{
+		this.dificultad=dificultad;
+	}
 
-    public void setTemporada(String temporada) {
-        this.temporada = temporada;
-    }
+	public String getTemporada()
+	{
+		return temporada;
+	}
 
-    public Integer getCalorias() {
-        return calorias;
-    }
+	public void setTemporada(String temporada)
+	{
+		this.temporada=temporada;
+	}
 
-    public void setCalorias(Integer calorias) {
-        this.calorias = calorias;
-    }
+	public Integer getCalorias()
+	{
+		return calorias;
+	}
 
-    public List<String> obtenerContraIndicaciones() {
-        return contraIndicaciones;
-    }
+	public void setCalorias(Integer calorias)
+	{
+		this.calorias=calorias;
+	}
 
-    public void setContraIndicaciones(List<String> contraIndicaciones) {
-        this.contraIndicaciones = contraIndicaciones;
-    }
+	public List<String> obtenerContraIndicaciones()
+	{
+		return contraIndicaciones;
+	}
 
-    public Integer obtenerNivelEnPiramideAlimenticia() {
-        if(ingredientes.isEmpty()) {
-            return 0;
-        }
+	public void setContraIndicaciones(List<String> contraIndicaciones)
+	{
+		this.contraIndicaciones=contraIndicaciones;
+	}
 
-        int sum = 0;
-        for (Ingrediente ingrediente : ingredientes) {
-            sum += ingrediente.obtenerNivelPiramideAlimenticia();
-        }
+	public Integer obtenerNivelEnPiramideAlimenticia()
+	{
+		if(ingredientes.isEmpty())
+		{
+			return 0;
+		}
 
-        return sum / ingredientes.size();
-    }
+		int sum=0;
+		for(Ingrediente ingrediente:ingredientes)
+		{
+			sum+=ingrediente.obtenerNivelPiramideAlimenticia();
+		}
+
+		return sum/ingredientes.size();
+	}
 }
