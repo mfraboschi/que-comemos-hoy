@@ -1,2 +1,10 @@
-.idea*
+logs
+target
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
 *.iml
+/.sbtserver
+/RUNNING_PID
