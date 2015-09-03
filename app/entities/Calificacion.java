@@ -1,6 +1,7 @@
 package entities;
 
 import dao.CalificacionDAO;
+import models.*;
 
 public class Calificacion {
     private static CalificacionDAO calificacionDAO;

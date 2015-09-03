@@ -1,7 +1,14 @@
 @(message: String)
 
-@main("Welcome to Play") {
+@main("¿Que comemos hoy?") {
 
-    @play20.welcome(message, style = "Java")
-
+    <h1>Bienvenidos a la mejor guía de alimentación Online</h1>
+    <ul>
+    <li>
+    	<a href="">Ingresar</a>
+    </li>
+    <li>
+    <a href="@routes.Application.crearUsuario()">Crear usuario</a>
+    </li>
+	</ul>
 }

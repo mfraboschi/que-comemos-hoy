@@ -1,7 +1,7 @@
 package entities;
 
 import dao.GrupoDAO;
-
+import models.*;
 import java.util.HashSet;
 import java.util.Set;
 

@@ -2,7 +2,6 @@ package statistics;
 
 import entities.Receta;
 import enums.Periodo;
-import java.util.List;
 import java.util.Map;
 
 public class EstadisticaPorDificultad implements Estadistica {

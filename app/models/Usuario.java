@@ -1,39 +1,30 @@
-package entities;
+package models;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import entities.Receta;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import com.avaje.ebean.Model;
 import enums.Sexo;
 import enums.Complexion;
-
-
-public class Usuario
+import entities.Receta;
+@Entity
+public class Usuario extends Model
 {
+	@Id
 	private String id;
 	private String password;
 	public String nombre;
-	public char sexo;
+	public String apellido;
 	public Date fechaNacimiento;
 	public Integer alturaEnCentimetros;
 	public Integer peso;
 	public String dieta;
-	private String rutina;
-	public Enum<Complexion> complexion;
-	public List<Receta> recetas;
-	public Receta receta;
 	
-	public static Usuario obtenerUsuario(Integer usuarioId)
-	{
-		return new Usuario();
-	}
-
-
-	public void setReceta(Receta receta)
-	{
-		this.receta=receta;
-	}
+	
 
 	public void guardar()
 	{
