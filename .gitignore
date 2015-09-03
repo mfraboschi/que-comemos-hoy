@@ -8,3 +8,5 @@ target
 *.iml
 /.sbtserver
 /RUNNING_PID
+/bin/
+/.cache*
