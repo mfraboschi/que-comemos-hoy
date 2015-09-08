@@ -11,8 +11,8 @@ import enums.Complexion;
 
 public class Usuario
 {
-	private String id;
-	private String password;
+	public String id;
+	public String password;
 	public String nombre;
 	public char sexo;
 	public Date fechaNacimiento;
