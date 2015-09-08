@@ -19,6 +19,7 @@ public class Usuario extends Model
 	private String password;
 	public String nombre;
 	public String apellido;
+	public char sexo;
 	public Date fechaNacimiento;
 	public Integer alturaEnCentimetros;
 	public Integer peso;

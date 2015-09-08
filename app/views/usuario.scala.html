@@ -4,8 +4,29 @@
 
     <h1>Ingrese sus datos</h1>
     <form action="@routes.Application.addUsuario()" method="POST">
-    	<label>Nombre</label><input type="text" name="nombre"></input>
+    	<label>Nombre</label><input type="text" name="nombre"></input> 
+    	<br />
     	<label>Apellido</label><input type="text" name="apellido"></input>
+    	<br />
+		  <input type="radio" name="sexo" value="m"> Masculino<br>
+  			<input type="radio" name="sexo" value="f"> Femenino<br>
+ 			 <br />
+    	
+		
+		Fecha Nacimiento<input type="date" name="fechaNacimiento" ><br><br>
+		Altura (cm)<input type="number" name="alturaEnCentimetros"><br>
+		Peso<input type="number" name="peso"><br>
+		Dieta<input type="text" name="dieta"><br>
+		
+		<br />
+    	Usuario:
+		<input type="text" name="id">
+		<br>
+		Password:
+		<input type="password" name="password">
+    	<br />
+    	
     	<input type="submit" value="Ingresar"></input>
+    	
 	</form>
 }
