@@ -15,8 +15,8 @@ import entities.Receta;
 public class Usuario extends Model
 {
 	@Id
-	private String id;
-	private String password;
+	public String id;
+	public String password;
 	public String nombre;
 	public String apellido;
 	public char sexo;
