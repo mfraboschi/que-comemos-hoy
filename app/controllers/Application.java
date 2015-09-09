@@ -33,6 +33,7 @@ public class Application extends Controller {
     
     public Result addUsuario() {
     	Usuario usuario = Form.form(Usuario.class).bindFromRequest().get();
+    	    	
     	usuario.save();
     	return redirect(routes.Application.listarUsuarios());
     }
@@ -77,7 +78,12 @@ public class Application extends Controller {
     
     public Result addReceta() {
     	Receta receta = Form.form(Receta.class).bindFromRequest().get();
+    	receta.duenio = temp;
     	receta.save();
+    	
+    	temp.recetas.add(receta);
+    	temp.save();
+    
     	return redirect(routes.Application.listarRecetas());
     }
     
