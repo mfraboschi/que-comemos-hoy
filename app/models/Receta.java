@@ -13,7 +13,7 @@ import enums.Sexo;
 import enums.Complexion;
 import entities.Condimento;
 import entities.Ingrediente;
-import entities.Usuario;
+import models.Usuario;
 @Entity
 public class Receta extends Model
 {

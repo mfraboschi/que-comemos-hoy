@@ -1,9 +1,13 @@
-@(message: String)
+@(message: String, usuario: models.Usuario)
 
 @main("¿Que comemos hoy?") {
     <h1>Ingrese datos de receta</h1>
     <form action="@routes.Application.addReceta()" method="POST">
-    <label>Nombre</label><input type="text" name="nombreReceta"></input> 
+    
+    	<label>Duenio:</label>@usuario.nombre
+    	<br />
+    	
+    	<label>Nombre</label><input type="text" name="nombreReceta"></input> 
     	<br />
     	<label>Calificacion</label><input type="number" name="calificacion" min="1" max="5"></input>
     	<br />

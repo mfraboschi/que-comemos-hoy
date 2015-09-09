@@ -21,7 +21,8 @@ import models.Receta;
 public class Application extends Controller {
 
     public List<Usuario> listaUsuarios;
-
+    public Usuario temp;
+    
     public Result index() {
         return ok(index.render(""));
     }
@@ -54,7 +55,7 @@ public class Application extends Controller {
             List<Usuario> prueba = listaUsuarios.stream().filter(a -> a.id.equals(user)).collect(Collectors.toList());
             if (prueba.size() > 0)
             {
-                Usuario temp = prueba.get(0);
+                temp = prueba.get(0);
                 if (temp.password.equals(pass))
                 //return redirect(routes.Application.begin());
                 	return redirect(routes.Application.crearReceta());
@@ -71,7 +72,7 @@ public class Application extends Controller {
     
     
     public Result crearReceta() {
-    	return ok(begin.render(""));
+    	return ok(begin.render("",temp));
     }
     
     public Result addReceta() {
