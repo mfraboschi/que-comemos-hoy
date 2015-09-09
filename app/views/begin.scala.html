@@ -1,3 +1,22 @@
+@(message: String)
+
 @main("¿Que comemos hoy?") {
-    Bienvenido
+    <h1>Ingrese datos de receta</h1>
+    <form action="@routes.Application.addReceta()" method="POST">
+    <label>Nombre</label><input type="text" name="nombreReceta"></input> 
+    	<br />
+    	<label>Calificacion</label><input type="number" name="calificacion" min="1" max="5"></input>
+    	<br />
+    	<label>Dificultad</label><input type="number" name="dificultad"></input>
+    	<br />
+    	<label>Temporada</label><input type="text" name="temporada"></input> 
+    	<br />
+    	<label>Calorias</label><input type="number" name="calorias"></input> 
+    	<br />
+    	<label>Procedimientos</label><input type="text" name="procedimiento"></input> 
+    	<br />
+    	
+    	<input type="submit" value="Ingresar"></input>
+    	
+    </form>
 }

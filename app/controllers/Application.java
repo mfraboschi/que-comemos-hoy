@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 import static play.libs.Json.toJson;
 
 import models.Usuario;
+import models.Receta;
 
 public class Application extends Controller {
 
@@ -55,13 +56,32 @@ public class Application extends Controller {
             {
                 Usuario temp = prueba.get(0);
                 if (temp.password.equals(pass))
-                return redirect(routes.Application.begin());
+                //return redirect(routes.Application.begin());
+                	return redirect(routes.Application.crearReceta());
             }
         }
         return ok("ERROR");
     }
 
+    /*
     public Result begin() {
         return ok(begin.render());
+    }
+    */
+    
+    
+    public Result crearReceta() {
+    	return ok(begin.render(""));
+    }
+    
+    public Result addReceta() {
+    	Receta receta = Form.form(Receta.class).bindFromRequest().get();
+    	receta.save();
+    	return redirect(routes.Application.listarRecetas());
+    }
+    
+    public Result listarRecetas() {
+    	List<Receta> listaRecetas = new Model.Finder(String.class, Receta.class).all();
+    	return ok(toJson(listaRecetas));
     }
 } 
