@@ -24,7 +24,7 @@ public class Usuario extends Model
 	public Integer alturaEnCentimetros;
 	public Integer peso;
 	public String dieta;
-	public List<Receta> recetas;
+	//public List<Receta> recetas;
 
 	
 

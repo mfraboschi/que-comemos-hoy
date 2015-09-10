@@ -81,7 +81,6 @@ public class Application extends Controller {
     	receta.duenio = temp;
     	receta.save();
     	
-    	temp.recetas.add(receta);
     	temp.save();
     
     	return redirect(routes.Application.listarRecetas());
