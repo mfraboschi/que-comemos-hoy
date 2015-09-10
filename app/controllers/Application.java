@@ -40,7 +40,7 @@ public class Application extends Controller {
     
     public Result listarUsuarios() {
     	listaUsuarios = new Model.Finder(String.class, Usuario.class).all();
-    	return ok(toJson(listaUsuarios));
+    	return ok(index.render(""));
     }
     
     public Result login() {
