@@ -5,18 +5,17 @@
 # Home page
 GET    /                            controllers.Application.index()
 
-GET    /crearUsuario				controllers.Application.crearUsuario()
-POST   /addUsuario					controllers.Application.addUsuario()
-GET    /login				 		controllers.Application.login()
-GET    /listarUsuarios				controllers.Application.listarUsuarios()
-POST   /entrar                      controllers.Application.entrar()
+GET    /crearUsuario				controllers.UsuarioControl.crearUsuario()
+POST   /addUsuario					controllers.UsuarioControl.addUsuario()
+GET    /listarUsuarios				controllers.UsuarioControl.listarUsuarios()
 
-#GET    /begin                       controllers.Application.begin()
+GET    /login				 		controllers.UsuarioControl.login()
+POST   /entrar                      controllers.UsuarioControl.entrar()
+GET    /begin                       controllers.UsuarioControl.begin()
 
-GET    /crearReceta					controllers.Application.crearReceta()
-POST   /addReceta					controllers.Application.addReceta()
-GET    /listarRecetas				controllers.Application.listarRecetas()
-   
+GET    /crearReceta					controllers.RecetaControl.crearReceta()
+POST   /addReceta					controllers.UsuarioControl.addReceta()
+GET    /listarRecetas				controllers.RecetaControl.listarRecetas()
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset) 
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

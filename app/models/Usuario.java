@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import com.avaje.ebean.Model;
 import enums.Sexo;
 import enums.Complexion;
-import models.Receta;
+import entities.Receta;
 @Entity
 public class Usuario extends Model
 {
@@ -24,8 +24,7 @@ public class Usuario extends Model
 	public Integer alturaEnCentimetros;
 	public Integer peso;
 	public String dieta;
-	//public List<Receta> recetas;
-
+	
 	
 
 	public void guardar()
@@ -36,4 +35,6 @@ public class Usuario extends Model
 	{
 		return new ArrayList<Usuario>();
 	}
+
+	
 }

@@ -1,0 +1,16 @@
+@(message: String)
+
+@main("¿Que comemos hoy?") {
+
+    <h1>Ingrese sus datos</h1>
+    <form action="@routes.UsuarioControl.addReceta()" method="POST">
+    	<label>Nombre</label><input type="text" name="nombre"></input> 
+    	<br />
+    	
+		Dificultad<input type="number" name="dificultad"><br>
+   		<br />
+   		
+    	<input type="submit" value="Ingresar"></input>
+    	
+	</form>
+}
