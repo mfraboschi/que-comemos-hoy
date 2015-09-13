@@ -23,6 +23,16 @@ public class UsuarioControl extends Controller {
     public List<Usuario> listaUsuarios;
     public Usuario temp;
     
+    public Result login() 
+    {
+    	return ok(login.render());
+    }
+    public Result begin() 
+    {
+        return ok(begin.render());
+    }
+    
+    
     
     public Result crearUsuario() 
     {
@@ -42,9 +52,7 @@ public class UsuarioControl extends Controller {
     	return ok(toJson(listaUsuarios));
     }
     
-    public Result login() {
-    	return ok(login.render());
-    }
+    
     
     public Result entrar() {
         DynamicForm requestData = Form.form().bindFromRequest();
@@ -63,9 +71,7 @@ public class UsuarioControl extends Controller {
         return ok("ERROR");
     }
 
-    public Result begin() {
-        return ok(begin.render());
-    }
+    
  
     
     public Result addReceta() {
