@@ -24,13 +24,15 @@ public class Usuario extends Model
 	public Integer alturaEnCentimetros;
 	public Integer peso;
 	public String dieta;
-	
-	
+	//public List<String> listaRecetas;
 
-	public void guardar()
+	
+/*
+	public void guardar(String e)
 	{
+		this.listaRecetas.add(e);
 	}
-
+*/
 	public static List<Usuario> obtenerUsuariosPorSexo(Sexo sexo)
 	{
 		return new ArrayList<Usuario>();
