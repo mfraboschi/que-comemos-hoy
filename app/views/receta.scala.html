@@ -1,10 +1,10 @@
 @(message: String)
 
-@main("¿Que comemos hoy?") {
+@main("Â¿Que comemos hoy?") {
 
     <h1>Ingrese sus datos</h1>
     <form action="@routes.UsuarioControl.addReceta()" method="POST">
-    	<label>Nombre</label><input type="text" name="nombre"></input> 
+    	<label>Nombre</label><input type="text" name="nombreReceta"></input> 
     	<br />
     	
 	 Dificultad
@@ -15,9 +15,10 @@
    		 <option value="4">Muy Dificil</option>
   	</select>
  	 <br><br>
-    	<input type="submit" value="Ingresar"></input>
     	
+    	<br>
     	<input type="submit" value="Ingresar"></input>
     	
 	</form>
 }
+
