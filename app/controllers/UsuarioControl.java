@@ -49,7 +49,9 @@ public class UsuarioControl extends Controller {
     
     public Result listarUsuarios() {
     	listaUsuarios = new Model.Finder(String.class, Usuario.class).all();
-    	return ok(toJson(listaUsuarios));
+        return redirect(routes.Application.index());
+    	//return ok(toJson(listaUsuarios));
+
     }
     
     
@@ -74,11 +76,14 @@ public class UsuarioControl extends Controller {
     
  
     
-    public Result addReceta() {
+    public Result addReceta() 
+    {
     	Receta receta = Form.form(Receta.class).bindFromRequest().get();
     	receta.duenio = temp;
-    	receta.calificacion = 2;
     	receta.save();
+    	
+    	//temp.guardar(receta.nombreReceta);
+
         return redirect(routes.RecetaControl.listarRecetas());
     	
     }
